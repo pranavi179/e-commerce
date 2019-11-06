@@ -1,14 +1,20 @@
 import React , { Component } from 'react';
-import logo from './logo.svg';
-import './styles/register.css';
+import modals from './node_modules/materialize-css/modal.js'
 
 
-export default class register extends React.Component{
+
+export default class Register extends Component{
+    constructor(props) {
+        super(props);
+        this.username= {};
+        this.password ={};
+    }
     render() {
         return(
-            <nav className = "register" >
-                
-            </nav>
-        )
+            <h1>erfsdf</h1>
+            // <nav className = "register" >
+            // <h1>erfsdf</h1> 
+            // </nav>
+        );
     }
 }
