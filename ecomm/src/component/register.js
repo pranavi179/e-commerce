@@ -1,17 +1,24 @@
 import React , { Component } from 'react';
-import modals from './node_modules/materialize-css/modal.js'
+// import Modal from './component/modal.js';
 
 
 
 export default class Register extends Component{
     constructor(props) {
         super(props);
-        this.username= {};
-        this.password ={};
+        this.state= {   username: '' , password: ''}
     }
     render() {
         return(
-            <h1>erfsdf</h1>
+            <div>
+                {/* <Modal> */}
+                    <div class = "container">
+                    <h1>erfsdf</h1>
+                    </div>
+                
+                {/* </Modal> */}
+            </div>
+            
             // <nav className = "register" >
             // <h1>erfsdf</h1> 
             // </nav>
