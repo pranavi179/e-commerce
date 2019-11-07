@@ -2,28 +2,47 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class SignInForm extends Component{
+    constructor() {
+        super();
+        this.state= {
+            email:'',
+            password:''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
+
+    }
+        handleChange(e) {
+              let target = e.target;
+              let value = target.type === 'checkbox' ? target.checked : target.value;
+              let name = target.name;
+              this.setState({
+                  [name]: value
+              });
+
+        }
+        handleSubmit(e) {
+            e.preventDefault();
+            console.log('the form was submitted with data below');
+            console.log(this.state);
+        }
     render() {
         return(
 
      <div className = "FormCenter">
-          <form className = "FormField" onSubmit= {this.handleSubmit}>
+          <form onSubmit= {this.handleSubmit} className = "FormField" onSubmit= {this.handleSubmit}>
        
-              <div className = "FormField">
-                <label className = "FormField__Label" htmlFor="name">Full Name </label>
-                <input type= "text" 
-                id = "name"
-                className="FormField__Input"
-                placeholder = "Enter your full Name"
-                name = "name" />
-              </div>
-       
+              
         <div className = "FormField">
             <label className = "FormField__Label" htmlFor="email">Email Address</label>
             <input type= "email" 
             id = "email"
              className="FormField__Input"
              placeholder = "Enter your Email Address"
-             name = "email" />
+             name = "email" 
+             value={this.state.email}
+             onChange= {this.handleChange }  />
           </div>
 
         <div className = "FormField">
@@ -32,7 +51,9 @@ class SignInForm extends Component{
             id = "password"
              className="FormField__Input"  
              placeholder = "Enter your password"
-             name = "password" />
+             name = "password"
+             value={this.state.password} 
+             onChange= {this.handleChange }  />
           </div>
 
          
