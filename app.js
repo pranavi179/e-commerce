@@ -20,19 +20,32 @@ const userSchema = new mongoose.Schema({
   password:{
     type:String,
     required : true
-  },
-
-salt:{
-
-  type:String,
-},
-
-  hash:{
-    type:String,
-
   }
 
 });
+
+
+const productSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    unique: true,
+    required : true
+  },
+
+  image:{
+    type:String,
+    required : true
+  },
+
+  price:{
+    type:String
+    required:true
+  }
+});
+
+
+
+
 
 
 
