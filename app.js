@@ -38,8 +38,8 @@ const productSchema = new mongoose.Schema({
   },
 
   price:{
-    type:String
-    required:true
+    type:String,
+    required : true
   }
 });
 
@@ -50,6 +50,9 @@ const productSchema = new mongoose.Schema({
 
 
 var User = mongoose.model("User", userSchema);
+
+var Product = mongoose.model("Product", productSchema);
+
 //Get the default connection
 var db = mongoose.connection;
 
@@ -133,9 +136,18 @@ User.findOne({ username: data.username },function (err, doc){
 });
 
 
-
-
-
+app.post("/addproduct", (req, res) => {
+  let data = req.body;
+       var myData = new Product(data);
+  var myData = new (data);
+         myData.save()
+         .then(item => {
+         res.send("item saved to database");
+         })
+         .catch(err => {
+         res.status(400).send("unable to save to database");
+        })
+  });
 
 app.post("/adduser", (req, res) => {
   let data = req.body;
