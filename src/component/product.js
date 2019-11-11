@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component , useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import ImageGrid from './ImageGrid';
 import MainImage from './MainImage';
 import Info from './Info';
-import {useState, setSelectedImage, selectedImage } from 'react';
+// import {useState, setSelectedImage, selectedImage } from 'react';
 
 // import Image from './images';
 
@@ -32,7 +32,7 @@ export default class Product extends Component {
                 pdescription:'',
                 pfeautres:''
             }
-           
+            
 
          };
          this.handleChange = this.handleChange.bind(this);
