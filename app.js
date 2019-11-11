@@ -7,7 +7,7 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser'), bcrypt = require('bcrypt');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://dtsajinski:yiUnELy3z6F6SsM@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 var Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
@@ -28,7 +28,6 @@ const userSchema = new mongoose.Schema({
 const productSchema = new mongoose.Schema({
   name: {
     type: String,
-    unique: true,
     required : true
   },
 
@@ -42,11 +41,6 @@ const productSchema = new mongoose.Schema({
     required : true
   }
 });
-
-
-
-
-
 
 
 var User = mongoose.model("User", userSchema);
@@ -116,30 +110,63 @@ let data= req.body;
 // console.log(data);
 // console.log(data.username);
 User.findOne({ username: data.username },function (err, doc){
+  console.log("PASSSSSSSSSSSSSSSS", doc.password, data.password )
  // console.log(doc.password);
  // user_n= doc.password;
 // localstorage.setItem(token:"hashvalue");
 
-// console.log("///////////",doc.password);
-        // test a matching password
-    bcrypt.compare(doc.password, data.password, function(err, isMatch) {
-          if (err) {console.log("error",err);}
-          else{
-            console.log("Match");
-            res.send("Signed in");
 
+
+
+// console.log("///////////",doc.username);
+        // test a matching password
+
+       
+
+// bcrypt.hash(data.password, 10, function(err, hash) {
+//           if (err) {
+//             console.log("Error in hashing")
+//           };
+
+
+
+//         console.log(doc.password)
+//         console.log(hash);
+
+
+        // if(doc.password==hash){
+        //   res.send("Success");
+        // }
+        // else{
+        //   res.send("failedd");
+        // }
+
+
+
+
+    bcrypt.compare(data.password, doc.password, function(err, isMatch) {
+      console.log("ERRRRRRRRRRRRRRRRRRRRORRRRRRRRRRRRr", err, isMatch)
+          if (err) {console.log("error",err);}
+           if(isMatch){
+            console.log("Match");
+            res.send("Matched")
+            // res.send("Signed in");
           }
+          else{
+            res.send("Didn't match");
+            console.log("Doesn't match")
+          }
+    });
     });
 
 });
  
-});
+// });
 
 
 app.post("/addproduct", (req, res) => {
   let data = req.body;
        var myData = new Product(data);
-  var myData = new (data);
          myData.save()
          .then(item => {
          res.send("item saved to database");
@@ -152,13 +179,10 @@ app.post("/addproduct", (req, res) => {
 app.post("/adduser", (req, res) => {
   let data = req.body;
 
-   bcrypt.genSalt(function(err, salt) {
-      if (err){
-        console.log("ERRRRRRRRRRRRRRRRRRRRor");
-      };
+   
 
       // hash the password along with our new salt
-      bcrypt.hash(data.password, salt, function(err, hash) {
+      bcrypt.hash(data.password, 10, function(err, hash) {
           if (err) {
             console.log("Error in hashing")
           };
@@ -176,7 +200,6 @@ app.post("/adduser", (req, res) => {
          res.status(400).send("unable to save to database");
          });
       });
-  });
  });
 
 app.use(logger('dev'));
