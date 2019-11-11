@@ -7,7 +7,7 @@ var crypto = require('crypto');
 var bodyParser = require('body-parser'), bcrypt = require('bcrypt');
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://dtsajinski:yiUnELy3z6F6SsM@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://dtsajinski:7Wxna58peOpwasCU@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 var Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
