@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var crypto = require('crypto');
 var bodyParser = require('body-parser'), bcrypt = require('bcrypt');
-
+// const MongoStore = require('connect-mongo')(session);
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://dtsajinski:7Wxna58peOpwasCU@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 var Schema = mongoose.Schema;
@@ -206,6 +206,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+// app.use(session({
+//     secret: 'my-secret',
+//     resave: false,
+//     saveUninitialized: true,
+//     store: new MongoStore({ mongooseConnection: db })
+// }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
