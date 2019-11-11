@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // import React from 'react';
 // import './App.css';
 // import { BrowserRouter as Router ,Route, Link } from "react-router-dom";
@@ -59,21 +58,17 @@
 
 
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import SignUpForm from './component/SignUpForm';
 import SignInForm from './component/SignInForm';
+
 import './App.css';
-import Product from './component/product';
-import Navbar from './component/navbar';
-// import Sig from './component/sig';
 
 class App extends Component {
   render() {
     return (
-      <Router>
+      <Router basename="/react-auth-ui/">
         <div className="App">
-          <Navbar />
-          {/* <Sig /> */}
           <div className="App__Aside"></div>
           <div className="App__Form">
             <div className="PageSwitcher">
@@ -82,47 +77,19 @@ class App extends Component {
               </div>
 
               <div className="FormTitle">
-                  <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
-                  or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
+                  <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
               </div>
-              {/* Redirect User to / if logged in else redirect to sign in */}
-              <Route exact path="/" component={SignUpForm} />
-              
-              <Route path="/sign-in" component={SignInForm} />
-             
-              <Route path="/product" component={Product} />
-              
+
+              <Route exact path="/" component={SignUpForm}>
+              </Route>
+              <Route path="/sign-in" component={SignInForm}>
+              </Route>
           </div>
 
         </div>
       </Router>
     );
   }
-=======
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
->>>>>>> 4ae6a15016ee414c748ea6590b16688e6ff9abf9
 }
 
 export default App;
