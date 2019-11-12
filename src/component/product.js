@@ -1,4 +1,4 @@
-import React, { Component , useState } from 'react';
+import React, { Component  } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import ImageGrid from './ImageGrid';
 import MainImage from './MainImage';
 import Info from './Info';
-// import {useState, setSelectedImage, selectedImage } from 'react';
+import {useState , selectedImage ,setSelectedImage} from 'react';
 
 // import Image from './images';
 
@@ -16,11 +16,21 @@ const images = [
     " https://thenypost.files.wordpress.com/2019/09/somethings-killing-galaxys2.jpg?quality=90&strip=all&w=618&h=410&crop=1",
     "https://media3.s-nbcnews.com/j/newscms/2018_21/2443266/180524-milky-way-mn-1418_d5ad12146e1dcb198ab0bea429dcd58b.fit-760w.jpg"
  ];
-
+const product = { 
+    title: 'fgduih',
+    description:'sknjrflvxmldcigfvhxdiug',
+    price : 234,
+    category : 'idfszos'
+};
 
 
  
 export default class Product extends Component {
+                            // const images = () => { 
+                            //      const [selectedImage,setSelectedImage] = useState(0);
+                            // }
+   
+
     
     constructor(props) {
         super(props);
@@ -31,12 +41,14 @@ export default class Product extends Component {
                 pimage:'',
                 pdescription:'',
                 pfeautres:''
-            }
+            },
+            
             
 
          };
          this.handleChange = this.handleChange.bind(this);
          this.handleSubmit = this.handleSubmit.bind(this);
+         
  
     }
     handleChange(e) {
@@ -62,14 +74,14 @@ export default class Product extends Component {
                 
                 <Grid container>
                     <Grid item sm = {1} >
-                        <ImageGrid  images = { images } />
+                        <ImageGrid  images = { images }  onSelect = {setSelectedImage } selectedImage={selectedImage} />
 
                     </Grid>
                     <Grid item sm = {5} >
                         <MainImage src = {images[selectedImage]} />
                     </Grid>
                     <Grid item sm = {6} >
-                        <Info />
+                        <Info {...product } />
                     </Grid>
                     
                 </Grid>

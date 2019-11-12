@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import '../App.css'; 
-// import Button from '@material-ui/core/Button';
+import Button from '@material-ui/core/Button';
 // import  '../node_modules/materialize-css'
 
 class Navbar extends Component {
@@ -9,15 +9,17 @@ class Navbar extends Component {
        
       <div>
 
-      {/* <ul id="nav">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">SignUp/SignIn</a></li>
-        <li>  <input type="text" placeholder="Search.."/> </li>
+      <ul id="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/product">Products</a></li>
+        <li><a href="/signup">SignUp/SignIn</a></li>
+        <Button variant="contained" color="secondary">
+      <li>  <input type="text" placeholder="Search.."/> </li>
+     search
+    </Button>
+        
       </ul>
-      <Button variant="contained" color="secondary">
-      Hello World
-    </Button> */}
+      
     </div>
      
                

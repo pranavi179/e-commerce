@@ -58,13 +58,14 @@
 
 
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import SignUpForm from './component/SignUpForm';
 import SignInForm from './component/SignInForm';
 import './App.css';
 import Product from './component/product';
 import Navbar from './component/navbar';
-// import Sig from './component/sig';
+import Sig from './component/sig';
 
 export default class App extends Component {
   render() {
@@ -72,8 +73,8 @@ export default class App extends Component {
       <Router>
         <div className="App">
           <Navbar />
-          {/* <Sig /> */}
-          <div className="App__Aside"></div>
+          <Sig />
+          {/* <div className="App__Aside"></div>
           <div className="App__Form">
             <div className="PageSwitcher">
                 <NavLink to="/sign-in" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
@@ -83,7 +84,18 @@ export default class App extends Component {
               <div className="FormTitle">
                   <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> 
                   or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
-              </div>
+              </div> */}
+
+              if (window.location.pathname ==='/')
+              {
+                ReactDOM.render(
+                  <Product />,
+                  document.getElementById('root')
+
+
+                )
+
+              }
               {/* Redirect User to / if logged in else redirect to sign in */}
               <Route exact path="/" component={SignUpForm} />
               
@@ -93,7 +105,7 @@ export default class App extends Component {
               
           </div>
 
-        </div>
+        {/* </div> */}
       </Router>
     );
   }

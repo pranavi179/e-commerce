@@ -1,13 +1,14 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 
-export default function ImageGrid( { images }) {
+export default function ImageGrid( { images , onSelect , selectedImage}) {
     return (
-        <Grid container>
-        { images.map(image => (
-            <img src = { image } height = {200}  style = {{ border:" solid #eee gray ", cursor:"pointer "}}  />
-        ))}
-        </Grid>
+        <Grid container direction="column">
+        { images.map((image ,index) => (
+            <img src = { image } height = {200} onClick={() => onSelect(index)} style = {{ border:index === selectedImage, }}  />
+        ) ) }
+        </Grid>   
         
     );
 }
+  
