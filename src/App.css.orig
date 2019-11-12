@@ -1,60 +1,18 @@
-<<<<<<< HEAD
-:root {
-  --mainBlue: #2a2a72;
-  --ligthBlue: #009ffd;
-  --mainWhite: #f3f3f3;
-  --mainDark: #232428;
-  --mainYellow: #ffa400;
-}
-body {
-  font-family: "Big Shoulders Text", cursive !important;
-  background: var (--mainWhite) !important;
-  color: var(--mainDark) !important;
-}
-.text-title {
-  font-family: "McLaren", cursive;
-  letter-spacing: 0.3rem;
-  text-transform: uppercase;
-}
-.text-blue {
-  color: var(--mainBlack);
-}
-.text-blue {
-  color: var(--mainBlue);
-}
-.navbar {
-  justify-content: flex-start !important;
-}
-
-.App {
-  height: 80vh;
-=======
 .App {
   height: 100vh;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   display: flex;
   color: white;
 }
 
 .App__Aside {
-<<<<<<< HEAD
-  /* width: 25%; */
-  background-color: #66dac7;
-=======
   width: 50%;
   background-color: #66DAC7;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   /* background-color: rgba(6, 128, 97, 0.993); */
 }
 
 .App__Form {
-<<<<<<< HEAD
-  /* width: 10%; */
-  background-color: #2e4158;
-=======
   width: 50%;
   background-color: #2E4158;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   padding: 25px 40px;
   overflow: auto;
 }
@@ -66,19 +24,11 @@ body {
 }
 
 .PageSwitcher__Item {
-<<<<<<< HEAD
-  background-color: #4c5d72;
-  color: #9da6b1;
-  padding: 10px 25px;
-  cursor: pointer;
-  font-size: 0.9em;
-=======
   background-color: #4C5D72;
   color: #9DA6B1;
   padding: 10px 25px;
   cursor: pointer;
   font-size: .9em;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   border: none;
   outline: none;
   display: inline-block;
@@ -86,11 +36,7 @@ body {
 }
 
 .PageSwitcher__Item--Active {
-<<<<<<< HEAD
-  background-color: #5ed0c0;
-=======
   background-color: #5ED0C0;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   color: white;
 }
 
@@ -108,21 +54,13 @@ body {
 }
 
 .FormTitle {
-<<<<<<< HEAD
-  color: #707c8b;
-=======
   color: #707C8B;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   font-weight: 300;
   margin-bottom: 50px;
 }
 
 .FormTitle__Link {
-<<<<<<< HEAD
-  color: #707c8b;
-=======
   color: #707C8B;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   text-decoration: none;
   display: inline-block;
   font-size: 1.7em;
@@ -146,22 +84,14 @@ body {
 .FormField__Label {
   display: block;
   text-transform: uppercase;
-<<<<<<< HEAD
-  font-size: 0.11em;
-=======
   font-size: .9em;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   color: white;
 }
 .FormField__Input {
   width: 85%;
   background-color: transparent;
   border: none;
-<<<<<<< HEAD
-  color: black;
-=======
   color: white;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   outline: none;
   border-bottom: 1px solid #445366;
   font-size: 1em;
@@ -171,55 +101,31 @@ body {
 }
 
 .FormField__Input::placeholder {
-<<<<<<< HEAD
-  color: #616e7f;
-}
-
-.FormField__Button {
-  background-color: #52c4b9;
-=======
   color: #616E7F;
 }
 
 .FormField__Button {
   background-color: #52C4B9;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   color: white;
   border: none;
   outline: none;
   border-radius: 25px;
   padding: 15px 70px;
-<<<<<<< HEAD
-  font-size: 0.8em;
-=======
   font-size: .8em;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   font-weight: 500;
 }
 
 .FormField__Link {
-<<<<<<< HEAD
-  color: #66707d;
-  text-decoration: none;
-  display: inline-block;
-  border-bottom: 1.5px solid #225e62;
-=======
   color: #66707D;
   text-decoration: none;
   display: inline-block;
   border-bottom: 1.5px solid #225E62;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
   padding-bottom: 5px;
 }
 
 .FormField__CheckboxLabel {
-<<<<<<< HEAD
-  color: #646f7d;
-  font-size: 0.9em;
-=======
   color: #646F7D;
   font-size: .9em;
->>>>>>> 51daf52923852a0a815e22bbdbf9367e2ba7585c
 }
 
 .FormField__Checkbox {
