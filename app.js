@@ -1,13 +1,14 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+// var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var crypto = require('crypto');
 var bodyParser = require('body-parser'), bcrypt = require('bcrypt');
 // const MongoStore = require('connect-mongo')(session);
+// const session = require('express-session');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://dtsajinski:7Wxna58peOpwasCU@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
 var Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
@@ -110,7 +111,7 @@ let data= req.body;
 // console.log(data);
 // console.log(data.username);
 User.findOne({ username: data.username },function (err, doc){
-  console.log("PASSSSSSSSSSSSSSSS", doc.password, data.password )
+  // console.log("PASSSSSSSSSSSSSSSS", doc.password, data.password )
  // console.log(doc.password);
  // user_n= doc.password;
 // localstorage.setItem(token:"hashvalue");
@@ -202,10 +203,34 @@ app.post("/adduser", (req, res) => {
       });
  });
 
+app.post("/getproduct",(req,res)=>{
+  // let data =req.body;
+
+// Product.findOne({ title: data.title },function (err, doc){
+Product.findOne().sort({$natural: -1}).limit(1).exec(function(err, doc){
+    if(err){
+        console.log(err);
+    }
+    else{
+        res.send(doc);
+    }
+});
+// Product.findOne({ name: "shirt" },function (err, doc){
+// console.log();
+
+// console.log(adam);s
+// res.send(doc.price);
+});
+
+
+// })
+
+// })
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 // app.use(session({
 //     secret: 'my-secret',
 //     resave: false,
@@ -214,6 +239,12 @@ app.use(cookieParser());
 // }));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(session({
+//     secret: 'Insert randomized text here',
+//     resave: false,
+//     saveUninitialized: false
+// }));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
