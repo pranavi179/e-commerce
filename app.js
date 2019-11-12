@@ -8,6 +8,8 @@ var bodyParser = require('body-parser'), bcrypt = require('bcrypt');
 // const MongoStore = require('connect-mongo')(session);
 // const session = require('express-session');
 const mongoose = require('mongoose');
+// get username and password from environment variables
+console.log(process.env); 
 mongoose.connect('mongodb+srv://heroku_login:dS7hNWnxVw5rnq8U@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 var Schema = mongoose.Schema;
 
