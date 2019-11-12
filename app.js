@@ -8,7 +8,7 @@ var bodyParser = require('body-parser'), bcrypt = require('bcrypt');
 // const MongoStore = require('connect-mongo')(session);
 // const session = require('express-session');
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test', {useNewUrlParser: true});
+mongoose.connect('mongodb+srv://d.tsajinski:Soalhyderabad@cluster0-1kg9w.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
 var Schema = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
