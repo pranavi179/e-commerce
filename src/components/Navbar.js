@@ -31,6 +31,13 @@ export default class Navbar extends Component {
                     <Icon type="shopping-cart" />
                 </button>
             </Link>
+            <Link to = '/ProductList' className="ml-auto">
+                <button>
+                    
+                    ProductList
+                    <Icon type="shopping-cart" />
+                </button>
+            </Link>
 
            </nav>
         );

@@ -1,34 +1,23 @@
-import React from 'react';
-import {Switch,Route} from 'react-router-dom';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap-grid.min.css';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap-grid.min.css";
 import "antd/dist/antd.css";
 
-
-import Navbar from './components/Navbar';
-import ProductList from './components/ProductList';
-import Details from './components/Details';
-import Cart from './components/Cart';
-import Default from './components/Default';
-import View from './components/view'
-
-
+import Navbar from "./components/Navbar";
+import View from "./components/view";
+import SignInForm from "./components/SignInForm";
+import SignUpForm from "./components/SignUpForm";
 
 function App() {
   return (
     <React.Fragment>
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
-        <Route exact path="/" component={ProductList} /> 
-        <Route path="/details" component={Details} />
-        <Route path="/cart" component={Cart} />
-        <Route component = {Default} />
+        <Route exact path="/" component={View} />
+        <Route exact path="/signin" component={SignInForm} />
+        <Route exact path="/signup" component={SignUpForm} />
       </Switch>
-      <ProductList />
-      <Details />
-      <Cart />
-      <Default />
-      <View />
     </React.Fragment>
   );
 }
