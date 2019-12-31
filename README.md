@@ -1,17 +1,26 @@
 E-Commerce :
  Cool,It's a clone of various e-commerce websites
+ 
  ## Application on which users can pick a product from products page and can add them to cart
  
- Pages created :
+# Pages created :
+ 
   Product page list
+  
   Product page 
+  
   login page
+  
   register page 
  
- Tools used:
+# Tools used:
+ 
  React
+ 
  javascript
+ 
  Material UI from css
+ 
  html and js used as JSX .
  
  
